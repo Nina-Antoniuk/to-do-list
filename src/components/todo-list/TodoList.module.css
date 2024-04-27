@@ -1,0 +1,21 @@
+.todoList {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+@media screen and (min-width: 768px) {
+  .todoList {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .todoList {
+    gap: 0;
+    margin-left: -50px;
+    margin-top: -50px;
+  }
+}

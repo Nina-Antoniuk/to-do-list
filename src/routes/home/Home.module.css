@@ -1,0 +1,31 @@
+.todoList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.buttonWrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--primary-color);
+  background-color: #fff;
+}
+
+.button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 20px;
+  color: var(--secondary-color);
+  background-color: var(--primary-button-color);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--primary-button-color-hover);
+}

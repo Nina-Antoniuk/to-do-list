@@ -1,0 +1,85 @@
+:root {
+  --primary-color: #474747;
+  --secondary-color: #ffffff;
+  --accent-color: #24a19c;
+  --delete-color: #ea5d5d;
+
+  --primary-button-color: #24a19c;
+  --primary-button-color-hover: #2bbdb8;
+  --primary-button-color-disabled: #305b5aa9;
+  --secondary-button-color: #fff;
+  --secondary-button-color-hover: #b9f5f0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.main {
+  padding: 30px 16px;
+}
+
+.container {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 80%;
+  }
+}
