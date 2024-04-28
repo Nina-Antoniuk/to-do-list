@@ -5,13 +5,11 @@
   border: 1px solid var(--primary-color);
   border-radius: 20px;
   outline: none;
-  cursor: pointer;
 }
 
 .select:focus {
   border-color: transparent;
   outline: 2px solid var(--accent-color);
-  outline-offset: -2px;
 }
 
 @media screen and (min-width: 768px) {
