@@ -9,6 +9,11 @@
   --primary-button-color-disabled: #305b5aa9;
   --secondary-button-color: #fff;
   --secondary-button-color-hover: #b9f5f0;
+
+  --urgent-label-color: #faac52;
+  --current-label-color: #b9f5f0;
+  --later-label-color: #c3d6f5;
+  --deleted-label-color: #d1cece;
 }
 
 *,

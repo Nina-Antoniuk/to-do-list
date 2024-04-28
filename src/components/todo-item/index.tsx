@@ -1,16 +1,17 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 
 import { Todo, TodoListType } from '../../types/todo';
-import { deleteActiveItem } from '../../redux/active-todos-slice';
-import { getDate } from '../../utils/getDate';
-import editIcon from '../../assets/edit.svg';
-import deleteIcon from '../../assets/delete.svg';
-
+import { Modal, ModalContent } from '../modal';
 import { IconButton } from '../icon-button';
+import { deleteActiveItem, editActiveItem } from '../../redux/active-todos-slice';
+import { addDeletedItem } from '../../redux/deleted-todos-slice';
+import { getDate } from '../../utils/getDate';
+import deleteIcon from '../../assets/delete.svg';
+import editIcon from '../../assets/edit.svg';
 
 import styles from './TodoItem.module.css';
-import { addDeletedItem } from '../../redux/deleted-todos-slice';
 
 export const TodoItem: FC<Todo & { listType: TodoListType }> = ({
   id,
@@ -20,17 +21,27 @@ export const TodoItem: FC<Todo & { listType: TodoListType }> = ({
   listType,
   dedline,
 }) => {
+  const [isPortalShown, setIsPortalShown] = useState(false);
+
   const dispatch = useDispatch();
 
   const date = getDate(timeStamp);
 
-  const handleEditItem = () => {};
+  const handleEditItem = () => {
+    setIsPortalShown(true);
+  };
 
   const handleDeleteItem = () => {
-    console.log(id);
-
     dispatch(deleteActiveItem({ id }));
     dispatch(addDeletedItem({ id, description, timeStamp, label, dedline }));
+  };
+
+  const handleButtonClick = () => {
+    setIsPortalShown(state => !state);
+  };
+
+  const handleSave = (data: Omit<Todo, 'id'>) => {
+    dispatch(editActiveItem({ ...data, id }));
   };
 
   return (
@@ -53,6 +64,19 @@ export const TodoItem: FC<Todo & { listType: TodoListType }> = ({
           Dedline: <b>{dedline}</b>
         </p>
       </div>
+      {isPortalShown &&
+        createPortal(
+          <Modal onCloseModal={handleButtonClick}>
+            <ModalContent
+              description={description}
+              dedline={dedline.split('.').reverse().join('-')}
+              label={label}
+              onCloseModal={handleButtonClick}
+              onSaveItem={handleSave}
+            />
+          </Modal>,
+          document.body
+        )}
     </li>
   );
 };

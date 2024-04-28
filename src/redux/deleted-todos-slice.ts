@@ -20,7 +20,10 @@ export const deletedTodosSlice = createSlice({
   initialState: deletedTodos,
   reducers: {
     addDeletedItem: (state, action: PayloadAction<Todo>) => {
-      state.push(action.payload);
+      const newItem = action.payload;
+      newItem.label = 'deleted';
+
+      state.push(newItem);
     },
   },
 });

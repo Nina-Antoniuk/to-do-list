@@ -21,7 +21,7 @@
   background-color: var(--accent-color);
 }
 
-.deleted {
+.removed {
   composes: itemHeader;
   background-color: var(--delete-color);
 }
@@ -47,24 +47,31 @@
 }
 
 .label {
+  display: inline-block;
   margin-right: auto;
+  padding: 5px 8px;
+  border-radius: 20px;
   text-transform: capitalize;
 }
 
 .urgent {
   composes: label;
+  background-color: var(--urgent-label-color);
 }
 
 .current {
   composes: label;
+  background-color: var(--current-label-color);
 }
 
 .later {
   composes: label;
+  background-color: var(--later-label-color);
 }
 
 .deleted {
   composes: label;
+  background-color: var(--deleted-label-color);
 }
 
 @media screen and (min-width: 768px) {

@@ -24,7 +24,12 @@ export const activeTodosSlice = createSlice({
       state.push(action.payload);
     },
     editActiveItem: (state, action: PayloadAction<Todo>) => {
-      // state.value -= 1;
+      return state.map(el => {
+        if (el.id === action.payload.id) {
+          return action.payload;
+        }
+        return el;
+      });
     },
     deleteActiveItem: (state, action: PayloadAction<{ id: string }>) => {
       return state.filter(el => el.id !== action.payload.id);

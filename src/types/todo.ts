@@ -8,4 +8,4 @@ export type Todo = {
   dedline: string;
 };
 
-export type TodoListType = 'active' | 'deleted';
+export type TodoListType = 'active' | 'removed';
