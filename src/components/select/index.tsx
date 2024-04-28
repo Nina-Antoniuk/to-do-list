@@ -17,7 +17,7 @@ export const Select: FC<Props> = ({ labels, label, onChangeLabel }) => {
 
   return (
     <select
-      className={styles.interactiveElement}
+      className={styles.select}
       value={label}
       id="label"
       name="label"

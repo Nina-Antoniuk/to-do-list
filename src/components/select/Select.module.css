@@ -1,4 +1,4 @@
-.interactiveElement {
+.select {
   width: 200px;
   height: 30px;
   padding: 0 10px;
@@ -8,19 +8,14 @@
   cursor: pointer;
 }
 
-.interactiveElement:focus {
+.select:focus {
   border-color: transparent;
   outline: 2px solid var(--accent-color);
   outline-offset: -2px;
 }
 
 @media screen and (min-width: 768px) {
-  .interactiveElementWrapper {
-    display: flex;
-    gap: 20px;
-  }
-
-  .interactiveElement {
+  .select {
     width: 150px;
   }
 }

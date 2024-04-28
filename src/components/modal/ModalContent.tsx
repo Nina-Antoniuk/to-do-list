@@ -65,7 +65,7 @@ export const ModalContent: FC<Props> = ({
       <div className={styles.interactiveElementWrapper}>
         <div className={styles.fieldWrapper}>
           <label htmlFor="label" className={styles.label}>
-            Todo label:
+            To-do label:
           </label>
           <select
             className={styles.interactiveElement}
@@ -77,9 +77,6 @@ export const ModalContent: FC<Props> = ({
             <option value={labels.urgent}>Urgent</option>
             <option value={labels.current}>Current</option>
             <option value={labels.later}>Later</option>
-            <option value={labels.deleted} disabled>
-              Deleted
-            </option>
           </select>
         </div>
         <div className={styles.fieldWrapper}>
@@ -98,7 +95,7 @@ export const ModalContent: FC<Props> = ({
       </div>
       <div className={styles.fieldWrapper}>
         <label htmlFor="textArea" className={styles.label}>
-          Todo description:
+          Description:
         </label>
         <textarea
           id="textArea"
