@@ -37,7 +37,7 @@
 }
 
 .interactiveElement {
-  width: 100%;
+  width: 200px;
   height: 30px;
   padding: 0 10px;
   border: 1px solid var(--primary-color);

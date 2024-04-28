@@ -11,7 +11,15 @@ export const NavBar = () => {
             to="/"
             className={({ isActive }) => (isActive ? styles.activeNavLink : styles.navLink)}
           >
-            All
+            Current
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/filter"
+            className={({ isActive }) => (isActive ? styles.activeNavLink : styles.navLink)}
+          >
+            Filter
           </NavLink>
         </li>
         <li>

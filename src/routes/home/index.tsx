@@ -30,7 +30,7 @@ export const Home: FC = () => {
 
   return (
     <div className="container">
-      <h1 className="title">Todo list</h1>
+      <h1 className="title">To-do list</h1>
       <TodoList list={activeTodos} listType={'active'} />
       <div className={styles.buttonWrapper}>
         <button type="button" className={styles.button} onClick={handleButtonClick}>

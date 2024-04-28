@@ -8,7 +8,7 @@ export const Bin = () => {
 
   return (
     <div className="container">
-      <h1 className="title">Deleted todos</h1>
+      <h1 className="title">List of deleted to-do</h1>
       <TodoList list={deletedTodos} listType={'removed'} />
     </div>
   );

@@ -26,6 +26,11 @@
   background-color: var(--delete-color);
 }
 
+.filter {
+  composes: itemHeader;
+  background-color: var(--dark-accent-color);
+}
+
 .button {
   width: 50px;
   height: 50px;

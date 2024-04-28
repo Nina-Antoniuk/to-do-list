@@ -1,4 +1,4 @@
-export type labelsType = 'urgent' | 'current' | 'later' | 'deleted';
+export type labelsType = 'urgent' | 'current' | 'later' | 'deleted' | 'all';
 
 export type Todo = {
   id: string;
@@ -8,4 +8,4 @@ export type Todo = {
   dedline: string;
 };
 
-export type TodoListType = 'active' | 'removed';
+export type TodoListType = 'active' | 'removed' | 'filter';

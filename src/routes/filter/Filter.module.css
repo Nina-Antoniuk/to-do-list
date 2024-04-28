@@ -1,0 +1,32 @@
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.filterField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (min-width: 500px) {
+  .filterContainer {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .filterContainer {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .filterContainer {
+    width: 80%;
+  }
+}
