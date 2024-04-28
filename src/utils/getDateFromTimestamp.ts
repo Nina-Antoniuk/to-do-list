@@ -1,4 +1,4 @@
-export const getDate = (timeStamp: number): string => {
+export const getDateFromTimestamp = (timeStamp: number): string => {
   const date = new Date(timeStamp);
 
   const day = date.getDate();

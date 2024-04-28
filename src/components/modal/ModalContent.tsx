@@ -48,6 +48,10 @@ export const ModalContent: FC<Props> = ({
     onCloseModal();
   };
 
+  const handleFocus: React.FocusEventHandler<HTMLTextAreaElement> = e => {
+    e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
   useEffect(() => {
     if (text.length && itemDedline.length) {
       setIsDisabledButton(false);
@@ -58,32 +62,41 @@ export const ModalContent: FC<Props> = ({
 
   return (
     <>
-      <div className={styles.fieldWrapper}>
-        <label htmlFor="label" className={styles.label}>
-          Todo label:
-        </label>
-        <select value={itemLabel} id="label" name="label" onChange={handleLabelChange}>
-          <option value={labels.urgent}>Urgent</option>
-          <option value={labels.current}>Current</option>
-          <option value={labels.later}>Later</option>
-          <option value={labels.deleted} disabled>
-            Deleted
-          </option>
-        </select>
+      <div className={styles.interactiveElementWrapper}>
+        <div className={styles.fieldWrapper}>
+          <label htmlFor="label" className={styles.label}>
+            Todo label:
+          </label>
+          <select
+            className={styles.interactiveElement}
+            value={itemLabel}
+            id="label"
+            name="label"
+            onChange={handleLabelChange}
+          >
+            <option value={labels.urgent}>Urgent</option>
+            <option value={labels.current}>Current</option>
+            <option value={labels.later}>Later</option>
+            <option value={labels.deleted} disabled>
+              Deleted
+            </option>
+          </select>
+        </div>
+        <div className={styles.fieldWrapper}>
+          <label htmlFor="dateInput" className={styles.label}>
+            Dedlile:
+          </label>
+          <input
+            className={styles.interactiveElement}
+            id="dateInput"
+            type="date"
+            value={itemDedline}
+            min={dedline}
+            onChange={handleDedlineChange}
+          />
+        </div>
       </div>
       <div className={styles.fieldWrapper}>
-        <label htmlFor="dateInput" className={styles.label}>
-          Dedlile:
-        </label>
-        <input
-          id="dateInput"
-          type="date"
-          value={itemDedline}
-          min={dedline}
-          onChange={handleDedlineChange}
-        />
-      </div>
-      <div className={`${styles.fieldWrapper} ${styles.textAreaWrapper}`}>
         <label htmlFor="textArea" className={styles.label}>
           Todo description:
         </label>
@@ -93,6 +106,7 @@ export const ModalContent: FC<Props> = ({
           placeholder="Enter new todo item..."
           value={text}
           onChange={handleTextChange}
+          onFocus={handleFocus}
         />
       </div>
       <button

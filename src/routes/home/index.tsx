@@ -1,17 +1,17 @@
 import { FC, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 
 import { TodoList } from '../../components/todo-list';
 import { Modal, ModalContent } from '../../components/modal';
 import { RootState } from '../../redux/store';
-import { v4 as uuidv4 } from 'uuid';
-
-import styles from './Home.module.css';
 import { labels } from '../../constants';
-import { getDedline } from '../../utils/getDedline';
+import { getInitialDedline } from '../../utils/getInitialDedline';
 import { addActiveItem } from '../../redux/active-todos-slice';
 import { Todo } from '../../types/todo';
+
+import styles from './Home.module.css';
 
 export const Home: FC = () => {
   const activeTodos = useSelector((state: RootState) => state.activeTodos);
@@ -42,7 +42,7 @@ export const Home: FC = () => {
           <Modal onCloseModal={handleButtonClick}>
             <ModalContent
               description=""
-              dedline={getDedline()}
+              dedline={getInitialDedline()}
               label={labels.current}
               onCloseModal={handleButtonClick}
               onSaveItem={handleSave}

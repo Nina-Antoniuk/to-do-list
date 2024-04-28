@@ -7,7 +7,7 @@ import { Modal, ModalContent } from '../modal';
 import { IconButton } from '../icon-button';
 import { deleteActiveItem, editActiveItem } from '../../redux/active-todos-slice';
 import { addDeletedItem } from '../../redux/deleted-todos-slice';
-import { getDate } from '../../utils/getDate';
+import { getDateFromTimestamp } from '../../utils/getDateFromTimestamp';
 import deleteIcon from '../../assets/delete.svg';
 import editIcon from '../../assets/edit.svg';
 
@@ -25,7 +25,7 @@ export const TodoItem: FC<Todo & { listType: TodoListType }> = ({
 
   const dispatch = useDispatch();
 
-  const date = getDate(timeStamp);
+  const date = getDateFromTimestamp(timeStamp);
 
   const handleEditItem = () => {
     setIsPortalShown(true);

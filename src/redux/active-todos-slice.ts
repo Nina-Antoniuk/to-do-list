@@ -4,6 +4,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { labels } from '../constants';
 import { Todo } from '../types/todo';
+import { getInitialDedline } from '../utils/getInitialDedline';
+
+const dedline = getInitialDedline();
 
 const activeTodos: Todo[] = [
   {
@@ -12,7 +15,7 @@ const activeTodos: Todo[] = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea dicta culpa dolorem qui consequatur laboriosam dolor officia? Tempore quam eum iste aut. Commodi at aperiam quas magni eum. Voluptates quod, magni quasi vel ipsum doloribus. Suscipit eius vel optio eveniet ratione excepturi ipsam voluptate sit modi, dolorem debitis odit officiis?',
     timeStamp: Date.now(),
     label: labels.current,
-    dedline: '',
+    dedline: dedline.split('-').reverse().join('.'),
   },
 ];
 

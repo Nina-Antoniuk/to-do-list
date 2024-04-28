@@ -2,8 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
+import { getInitialDedline } from '../utils/getInitialDedline';
 import { labels } from '../constants';
 import { Todo } from '../types/todo';
+
+const dedline = getInitialDedline();
 
 const deletedTodos: Todo[] = [
   {
@@ -11,7 +14,7 @@ const deletedTodos: Todo[] = [
     description: 'Some description',
     timeStamp: Date.now(),
     label: labels.deleted,
-    dedline: '',
+    dedline: dedline.split('-').reverse().join('.'),
   },
 ];
 
