@@ -11,9 +11,9 @@ function App() {
       </header>
       <main className="main">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/bin" element={<Bin />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="./" element={<Home />} />
+          <Route path="./bin" element={<Bin />} />
+          <Route path="./*" element={<NotFoundPage />} />
         </Routes>
       </main>
     </>
