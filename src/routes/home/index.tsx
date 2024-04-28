@@ -16,12 +16,10 @@ export const Home: FC = () => {
   const handleButtonClick = () => {
     setIsPortalShown(state => !state);
   };
-  console.log('activeTodos', activeTodos);
 
   return (
     <div className="container">
       <h1 className="title">Todo list</h1>
-      <p>filter?</p>
       <TodoList list={activeTodos} listType={'active'} />
       <div className={styles.buttonWrapper}>
         <button type="button" className={styles.button} onClick={handleButtonClick}>
